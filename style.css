@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#head_box{
+    display: flex;
+    justify-content: space-between;
+}
+
+#head_box a{
+    text-decoration: none;
+    color: black;
+
+}
+#head{
+    display: flex;
+    align-items: center;
+}
+
+
+#head_img{
+    width: 80px;
+    margin-left: 10px;
+}
+
+
+#information{
+    display: flex;
+}
+
+
+#head_text{
+    display: flex;
+    align-items: center;
+}
+
+#head_text a:hover{
+    font-weight: 600;
+    /* transition: 0.2s; */
+}
+
+
+#head_text a{
+    color: black;
+    margin: 0 20px;
+    text-decoration: none;
+}
+
+
+
+#login{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    /* justify-content: space-between; */
+    /* flex-direction: row; */
+}
+
+
+#login span{
+    margin-left: 10px;
+}
+
+
+#slider{
+    position: relative;
+    overflow: hidden;
+    
+    width: 900px;
+    height: 650px;
+    margin: 0 auto;
+}
+
+
+.slide{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+  
+    animation: slider 8s infinite linear;
+}
+
+.slide:nth-child(1){
+    background-image: url(./img/img_157651_1.jpg);
+    animation-delay: -0;
+}
+
+.slide:nth-child(2){
+    background-image: url(./img/athletes-1835893_640.jpg);
+    animation-delay: -2s;
+}
+.slide:nth-child(3){
+    background-image: url(./img/photo-1519435887317-eabcf2ab8075.jpg);
+    animation-delay: -4s;
+}
+.slide:nth-child(4){
+    background-image: url(./img/istockphoto-1449631889-612x612.jpg);
+    animation-delay: -6s;
+}
+
+
+@keyframes slider {
+    0%  {
+        transform: translateX(0);
+        animation-timing-function: ease;
+      }
+      20%{
+        transform: translateX(0);
+        animation-timing-function: ease;
+      }
+      25% {
+        transform: translateX(-100%);
+        animation-timing-function: step-end;
+      }
+      95% {
+        transform: translateX(100%);
+        animation-timing-function: ease;
+      }
+      100%{
+        transform: translateX(0);
+        animation-timing-function: ease;
+      }
+  }
+
+
+
+#footer{
+    margin: 0 20px;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#footer img{
+    width: 80px;
+}
