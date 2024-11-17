@@ -66,7 +66,7 @@
     position: relative;
     overflow: hidden;
     
-    width: 900px;
+    width: 1000px;
     height: 650px;
     margin: 0 auto;
 }
@@ -135,6 +135,285 @@
     align-items: center;
     justify-content: space-between;
 }
+
+#footer_span{
+    margin-left: 190px;
+}
+
+
 #footer img{
     width: 80px;
+}
+
+
+#game_schedule_box{
+    display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+button {
+    /* button 요소에 기본적으로 설정되는 스타일 속성 초기화 */
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+
+.game_schedule {
+    width: 450px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    
+  }
+   
+  /*#6*/
+  .game_schedule .head{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+  .game_schedule .head.current-date {
+    font-size: 24px;
+    font-weight: 600;
+  }
+  .game_schedule .head button {
+    width: 38px;
+    height: 38px;
+    font-size: 30px;
+    color: #878787;
+  }
+
+  .calendar ul {
+    display: flex;
+    list-style: none;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .calendar .weeks li {
+    font-weight: 500;
+  }
+  .calendar .days {
+    margin-bottom: 20px;
+  }
+  .calendar ul button,li{
+    /*#8*/
+    width: calc(100% / 7);
+    /*#9*/
+    position: relative;
+  }
+  .calendar .days li,button {
+    /*#10*/
+    z-index: 1;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+   
+  /*#11*/
+  .days li.inactive {
+    color: #aaa;
+  }
+
+  .days button,li#active {
+    color: #fff;
+  }
+  .calendar .days li::before {
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+  }
+  .calendar .days button::before {
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+  }
+  .days li:hover::before {
+    background: #f2f2f2;
+  }
+  .days button#active::before {
+    background: #008aff;
+ }
+
+#active{
+    display: none;
+}
+
+#active_lavel{
+    color: black;
+    margin-top: 30px;
+    cursor: pointer;
+    width: calc(100% / 7);
+    position: relative;
+}
+.cakebdar .days label::before{
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+}
+.days label#active_lavel::before{
+    background:  #008aff;
+}
+#active + label{
+    display: inline-block;
+    /* padding: 10px; */
+    /* background: #008aff; */
+    /* color: #fff; */
+}
+
+#active + label::before{
+    background: #008aff;
+    position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+    /* z-index: 10; */
+}
+
+#active +label + div{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+#active +label + div > div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px;
+    height: 300px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+#active +label + div > div > label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    cursor: pointer;
+    top: 0%;
+    left: 0%;
+    height: 10px;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    background: #dd5347;
+    color: #fff;
+    border-radius: 100%;
+    z-index: 1;
+}
+
+#active + label + div > label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.9);
+    z-index: 1;
+}
+
+#active + label + div{
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+#active:checked + label + div{
+   opacity: 1;
+   visibility: visible;
+}
+
+
+#todays_game{
+  background-color: #191919;
+  width: 40%;
+  height: 300px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+#todays_game_two {
+  width: 100px;
+  height: 100px;
+}
+
+.opacity{
+  opacity: 0;
+  transition: all 0.5s ease-in;
+}
+
+#todays_game_box:hover .opacity{
+  opacity: 1;
+}
+
+#todays_game img{
+  width: 100px;
+  height: 100px;
+}
+
+#todays_game_two img{
+  width: 100px;
+  height: 100px;
+}
+
+#todays_game_two{
+  background-color: #131D3A;
+  width: 30%;
+  height: 300px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#todays_game_box{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 30px;
+  transition: all 2s;
+}
+
+#todays_game_text{
+  text-align: center;
+  margin-bottom: 20px;
+}
+h1{
+  text-align: center;
 }
