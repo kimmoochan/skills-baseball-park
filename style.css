@@ -14,13 +14,16 @@
 }
 
 #head_box a{
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 
 }
 #head{
     display: flex;
-    align-items: center;
+    align-items: baseline;
+}
+.year{
+  font-size: 20px;
 }
 
 
@@ -179,7 +182,7 @@ button {
   /*#6*/
   .game_schedule .head{
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     margin-bottom: 30px;
   }
