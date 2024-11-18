@@ -2,9 +2,15 @@
     margin: 0;
     padding: 0;
 }
+
 #head_box{
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px; 
+  padding: 5px;
+  background-color: white;
+  z-index: 50;
 }
 
 #head_box a{
@@ -417,3 +423,254 @@ button {
 h1{
   text-align: center;
 }
+
+
+#ranking{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+#checkbox_text{
+  display: none;
+}
+
+
+
+.checkbox_text + label {
+  cursor: pointer;
+}
+#checkbox_text + label +div > div >div{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+ 
+}
+#checkbox_text + label +div > div > div{
+  display: flex;
+  justify-content: space-between;
+}
+
+#checkbox_text:checked + label + div >div >div{
+  opacity: 1;
+  visibility: visible;
+}
+
+
+#checkbox_text_Pitcher{
+  display: none;
+}
+
+
+#checkbox_text_Hitter{
+  display: none;
+}
+
+
+#checkbox_text_Pitcher + label +p{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+}
+
+#checkbox_text_Pitcher:checked +label+p{
+  opacity: 1;
+  visibility: visible;
+}
+
+#checkbox_text_Hitter + label +p{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+}
+
+#checkbox_text_Hitter:checked +label+p{
+  opacity: 1;
+  visibility: visible;
+}
+
+#checkbox_text_weekend{
+  display: none;
+}
+#checkbox_weekend_text_Pitcher{
+  display: none;
+}
+
+#checkbox_weekend_text_Hitter{
+  display: none;
+}
+
+#checkbox_text_weekend + label +div > div > div{
+  display: flex;
+  justify-content: space-between;
+}
+
+#weekend_league{
+  width: 160px;
+  height: 211px;
+}
+
+#checkbox_weekend_text_Pitcher + label +p{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+}
+
+#checkbox_weekend_text_Pitcher:checked +label+p{
+  opacity: 1;
+  visibility: visible;
+}
+
+#checkbox_text_weekend + label +div > div >div{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+ 
+}
+
+#checkbox_text_weekend:checked + label + div >div >div{
+  opacity: 1;
+  visibility: visible;
+}
+
+#checkbox_weekend_text_Hitter + label +p{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+}
+
+#checkbox_weekend_text_Hitter:checked +label+p{
+  opacity: 1;
+  visibility: visible;
+}
+
+#checkbox_text_dawn{
+  display: none;
+}
+#checkbox_dawn_text_Pitcher{
+  display: none;
+}
+#checkbox_dawn_text_Hitter{
+  display: none;
+}
+
+#checkbox_text_dawn + label +div > div > div{
+  display: flex;
+  justify-content: space-between;
+}
+
+#dawn_league{
+  width: 160px;
+  height: 211px;
+}
+
+#checkbox_dawn_text_Pitcher + label +p{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+}
+
+#checkbox_dawn_text_Pitcher:checked +label+p{
+  opacity: 1;
+  visibility: visible;
+}
+
+#checkbox_text_dawn + label +div > div >div{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+ 
+}
+
+#checkbox_text_dawn:checked + label + div >div >div{
+  opacity: 1;
+  visibility: visible;
+}
+
+#checkbox_dawn_text_Hitter + label +p{
+  opacity: 0;
+  visibility: hidden;
+  transition: all 1s;
+}
+
+#checkbox_dawn_text_Hitter:checked +label+p{
+  opacity: 1;
+  visibility: visible;
+}
+
+#ranking{
+  margin-bottom: 30px;
+}
+#key_ranking{
+  margin-bottom: 100px;
+}
+
+#key_ranking_accordion{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  margin: 0 auto;
+}
+
+.accordion_label {
+  display: block;
+  cursor: pointer;
+  margin: 0;
+  font-size: 20px;
+}
+
+.accordion_menu {
+  max-height: 0; 
+  overflow: hidden;
+  transition: all 0.7s ease-in-out;
+}
+
+#accordion:checked + .accordion_label + .accordion_menu {
+  max-height: 200px;
+}
+
+#accordion {
+  display: none;
+}
+
+#accordion_two:checked + .accordion_label + .accordion_menu {
+  max-height: 200px;
+}
+
+#accordion_two {
+  display: none;
+}
+
+#accordion_three:checked + .accordion_label + .accordion_menu {
+  max-height: 200px;
+}
+
+#accordion_three {
+  display: none;
+}
+
+#accordion_four:checked + .accordion_label + .accordion_menu {
+  max-height: 200px;
+}
+
+#accordion_four {
+  display: none;
+}
+
+#accordion_five:checked + .accordion_label + .accordion_menu {
+  max-height: 200px;
+}
+
+#accordion_five {
+  display: none;
+}
+
+#accordion_six:checked + .accordion_label + .accordion_menu {
+  max-height: 200px;
+}
+
+#accordion_six {
+  display: none;
+}
+
