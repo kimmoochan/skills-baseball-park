@@ -20,7 +20,7 @@
 }
 #head{
     display: flex;
-    align-items: baseline;
+    align-items: center;
 }
 .year{
   font-size: 20px;
