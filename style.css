@@ -2,7 +2,10 @@
     margin: 0;
     padding: 0;
 }
-
+body{
+  width: 1320px;
+  margin: 0 auto;
+}
 #head_box{
   display: flex;
   justify-content: space-between;
@@ -11,6 +14,7 @@
   padding: 5px;
   background-color: white;
   z-index: 50;
+  
 }
 
 #head_box a{
@@ -74,7 +78,7 @@
 #slider{
     position: relative;
     overflow: hidden;
-    
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     width: 1000px;
     height: 650px;
     margin: 0 auto;
@@ -90,7 +94,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-  
+    
     animation: slider 8s infinite linear;
 }
 
@@ -160,6 +164,7 @@
     display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 
@@ -177,6 +182,7 @@ button {
     background: #fff;
     border-radius: 10px;
     padding: 25px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
     
   }
    
@@ -263,8 +269,14 @@ button {
 #active{
     display: none;
 }
+#todays_game{
+  border-radius: 5px 0 0 5px;
+}
 
-#active_lavel{
+#todays_game_two{
+  border-radius: 0 5px 5px 0;
+}
+#active + label{
     color: black;
     margin-top: 30px;
     cursor: pointer;
@@ -282,18 +294,14 @@ button {
     border-radius: 50%;
     z-index: -1;
 }
-.days label#active_lavel::before{
-    background:  #008aff;
-}
 #active + label{
     display: inline-block;
     /* padding: 10px; */
     /* background: #008aff; */
     /* color: #fff; */
 }
-
+#active_lavel
 #active + label::before{
-    background: #008aff;
     position: absolute;
     content: '';
     height: 40px;
@@ -303,7 +311,6 @@ button {
     transform: translate(-50%, -50%);
     border-radius: 50%;
     z-index: -1;
-    /* z-index: 10; */
 }
 
 #active +label + div{
@@ -365,7 +372,9 @@ button {
    opacity: 1;
    visibility: visible;
 }
-
+#todays_game_text{
+  margin-top: 30px;
+}
 
 #todays_game{
   background-color: #191919;
@@ -374,13 +383,14 @@ button {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   
 }
 
 #todays_game_two {
   width: 100px;
   height: 100px;
+  
 }
 
 .opacity{
@@ -409,7 +419,7 @@ button {
   color: white;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #todays_game_box{
@@ -531,6 +541,21 @@ h1{
   transition: all 1s;
  
 }
+label#active_lavel:hover::before{
+  background: #f2f2f2;
+}
+
+.cakebdar .days label::before{
+  position: absolute;
+    content: '';
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: -1;
+}
 
 #checkbox_text_weekend:checked + label + div >div >div{
   opacity: 1;
@@ -630,51 +655,13 @@ h1{
   transition: all 0.7s ease-in-out;
 }
 
-#accordion:checked + .accordion_label + .accordion_menu {
+#key_ranking_accordion > input:checked + label + .accordion_menu{
   max-height: 200px;
 }
 
-#accordion {
+input[type="radio"]{
   display: none;
 }
 
-#accordion_two:checked + .accordion_label + .accordion_menu {
-  max-height: 200px;
-}
 
-#accordion_two {
-  display: none;
-}
-
-#accordion_three:checked + .accordion_label + .accordion_menu {
-  max-height: 200px;
-}
-
-#accordion_three {
-  display: none;
-}
-
-#accordion_four:checked + .accordion_label + .accordion_menu {
-  max-height: 200px;
-}
-
-#accordion_four {
-  display: none;
-}
-
-#accordion_five:checked + .accordion_label + .accordion_menu {
-  max-height: 200px;
-}
-
-#accordion_five {
-  display: none;
-}
-
-#accordion_six:checked + .accordion_label + .accordion_menu {
-  max-height: 200px;
-}
-
-#accordion_six {
-  display: none;
-}
 
