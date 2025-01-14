@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-- 헤더 -->
+    <div id="head_box">
+        
+        <div id="head">
+           <a href="#"><img id="head_img" src="./img/7247213.png" alt=""></a>
+            <span>skills baseball <br> park</span>
+        </div>
+        <div id="head_text">
+           <a href="#"><span>information</span></a> 
+            <a href="#"><span>statistics</span></a>
+            <a href="#"><span>reservation</span></a>
+            <a href="#"><span>goods</span></a>
+    
+        </div>
+        <div id="login">
+            <a href="#"><span>로그인</span></a>
+            <a href="#"><span>회원가입</span></a>
+
+        </div>
+    </div>
+<!-- 버튼 -->
+<h1>방문자 수 조회</h1>
+<div class="sub2_button_box">
+    <div class="cub2_button">
+        <select name="league" id="league">
+            <option value="0">나이트리그</option>
+            <option value="1">주말 리그</option>
+            <option value="2">새벽 리그</option>
+        </select>
+
+        <select name="week" id="week">
+            <option value="0">월</option>
+            <option value="1">화</option>
+            <option value="2">수</option>
+            <option value="3">목</option>
+            <option value="4">금</option>
+            <option value="5">토</option>
+            <option value="6">일</option>
+        </select>
+        <button onclick="widthChart()">가로보기</button>
+        <button onclick="chartView()">세로보기</button>
+        
+    </div>
+    
+</div>
+<!-- 차트 -->
+<div id="chartDiv"></div>   
+    
+
+<!-- 푸터 -->
+    <div id="footer">
+        <img src="./img/7247213.png" alt="">
+        <span id="footer_span">Copyrightⓒ Skills baseball park. All rights reserved.</span>
+        <span>  Call: 142-3677 <br>
+            Email: help@skillsbaseballpark.com <br>
+            Address: (12345) 서울특별서 중구 중북로 71</span>
+    </div>
+<script src="./script.js"></script>
+</body>
+</html>
