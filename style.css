@@ -744,3 +744,38 @@ input[type="radio"]{
   width: 80px;
   border-radius: 5px;
 }
+
+/* 굿즈 판매 영역 스타일*/
+.goodsSale_menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#goodsGroup{
+  display: flex;
+  justify-content: center;
+  margin: 0 10px;
+
+}
+
+#goodsGroup>div>input{
+  /* display: none; */
+  margin: 0 10px;
+  border-radius: 5px;
+}
+
+#goodsGroup>div{
+  display: flex;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border: solid 1px;
+  border-radius: 5px;
+}
+
+
+#sort{
+  height: 30px;
+  width: 135px;
+  border: solid 1px;
+  border-radius: 5px;
+}
