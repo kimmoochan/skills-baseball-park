@@ -55,6 +55,22 @@
 <!-- 차트 -->
 <div id="chartDiv"></div>   
     
+<!-- 굿즈 판매 영역 -->
+<div>
+    <h1>GOODS 판매량 확인</h1>
+    <div class="goodsSale_menu">
+        <div id="goodsGroup"></div>
+        <select name="" id="sort">
+            <option value="">판매량 내림차순</option>
+            <option value="">판매량 오름차순</option>
+            <option value="">가격 내림차순</option>
+            <option value="">가격 오름차순</option>
+        </select>
+
+    </div>
+</div>
+
+
 
 <!-- 푸터 -->
     <div id="footer">
@@ -67,6 +83,7 @@
 <script src="./script.js"></script>
 <script>
     widthChart();
+    goodsGroupAdd();
 </script>
 </body>
 </html>
