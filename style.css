@@ -664,4 +664,83 @@ input[type="radio"]{
 }
 
 
+/* sub2 css */
+.sub2_button_box{
+  display: flex;
+  justify-content: center;
+}
 
+.cub2_button>button{
+  border: solid 1px;
+  border-radius: 5px;
+  width: 90px;
+  height: 30px;
+}
+
+.cub2_button>select{
+  border: solid 1px;
+  border-radius: 5px;
+  width: 90px;
+  height: 30px;
+}
+
+.chart_width{
+  width: 600px;
+  height: 600px;
+  background-color: antiquewhite;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: left;
+  flex-direction: column;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.width_parents{
+  display: flex;
+  align-items: center;
+}
+
+.width{
+  height: 80px;
+  background-color: black;
+  margin: 10px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100px; */
+  border-radius: 5px;
+}
+
+/* 세로 차트트 */
+.chart_height{
+  width: 600px;
+  height: 600px;
+  background-color: antiquewhite;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  border-radius: 5px;
+}
+
+.height_parents{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 10px;
+}
+
+
+.height{
+  /* height: 80px; */
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  border-radius: 5px;
+}
