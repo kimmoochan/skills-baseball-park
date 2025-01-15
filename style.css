@@ -779,3 +779,9 @@ input[type="radio"]{
   border: solid 1px;
   border-radius: 5px;
 }
+
+
+/* 굿즈 리스트 스타일 */
+#goodsList{
+  display: flex;
+}
