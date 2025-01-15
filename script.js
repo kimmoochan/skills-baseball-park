@@ -74,7 +74,7 @@ async function goodsGroupAdd() {
     goodsGroupList.forEach((group)=>{
         goodsGroupElem.innerHTML += `
         <div>
-           <input id="${group}" value="${group}" type="checkbox" checked>
+           <input onchange="goodsListSort() " id="${group}" value="${group}" type="checkbox" checked>
            <p>${group}</p>
         </div>`;
     })
@@ -86,28 +86,61 @@ async function goodsListSort() {
     const sortValue = document.querySelector("#sort").value;
     let goodsSortList;
 
+    const checkboxes = document.querySelectorAll(
+        "#goodsGroup input[type='checkbox']"
+    )
+    const checkedGroups = Array.from(checkboxes)
+    .filter((checkbox) => checkbox.checked)
+    .map((checkbox) => checkbox.value);
+ 
+    const filteredGoods = data.data.filter((item) => checkedGroups.includes(item.group));
+// 오름,내림 차순 
     if(sortValue=="saleDesc"){
-        goodsSortList = [...data.data].sort((a,b)=>b.sale-a.sale);
+        goodsSortList = [...filteredGoods].sort((a,b)=>b.sale-a.sale);
     } else if(sortValue=="saleAsc"){
-        goodsSortList = [...data.data].sort((a,b)=>a.sale-b.sale);
+        goodsSortList = [...filteredGoods].sort((a,b)=>a.sale-b.sale);
     } else if(sortValue=="priceDesc"){
-        goodsSortList = [...data.data].sort((a,b)=> Number(b.price.replace(",","")) - Number(a.price.replace(",","")));
+        goodsSortList = [...filteredGoods].sort((a,b)=> Number(b.price.replace(",","")) - Number(a.price.replace(",","")));
     } else if(sortValue=="priceAsc"){
-        goodsSortList = [...data.data].sort((a,b)=>Number(a.price.replace(",",""))-Number(b.price.replace(",","")));
+        goodsSortList = [...filteredGoods].sort((a,b)=>Number(a.price.replace(",",""))-Number(b.price.replace(",","")));
     }
-
+// 굿즈 리스트&베스트 굿즈 리스트
     const goodsListElem = document.querySelector("#goodsList");
-    goodsSortList.forEach((item)=>{
-        goodsListElem.innerHTML += `
-        <div class="card" style="width: 18rem;">
-            <img src="./선수제공파일/B_Module/${item.img}" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">${item.title}</h5>
-              <p class="card-text">판매량 : ${item.sale}</p>
-              <p class="card-text">가격 : ${item.price}</p>
-              <p class="card-text">분류 : ${item.group}</p>
-              <button class="btn btn-primary w-75">수정제안</button>
-            </div>
-          </div>`
+    const bestGoodsListElem = document.querySelector("#bestGoods");
+
+    goodsListElem.innerHTML = "";
+    bestGoodsListElem.innerHTML = "";
+    goodsSortList.forEach((item, index)=>{
+
+        if(index < 3){
+            bestGoodsListElem.innerHTML += `
+            <div class="card" style="width: 18rem;">
+                <img src="./선수제공파일/B_Module/${item.img}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">[BEST 상품]${item.title}</h5>
+                  <p class="card-text">판매량 : ${item.sale}</p>
+                  <p class="card-text">가격 : ${item.price}</p>
+                  <p class="card-text">분류 : ${item.group}</p>
+                  <button onclick="goodsEditModalShow()" class="btn btn-primary w-75">수정제안</button>
+                </div>
+              </div>`
+        }else {
+
+            goodsListElem.innerHTML += `
+            <div class="card" style="width: 18rem;">
+                <img src="./선수제공파일/B_Module/${item.img}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">${item.title}</h5>
+                  <p class="card-text">판매량 : ${item.sale}</p>
+                  <p class="card-text">가격 : ${item.price}</p>
+                  <p class="card-text">분류 : ${item.group}</p>
+                  <button onclick="goodsEditModalShow()" class="btn btn-primary w-75">수정제안</button>
+                </div>
+              </div>`
+        }
     })
+}
+
+function goodsEditModalShow(){
+    $("#goodsModal").modal("show");
 }
