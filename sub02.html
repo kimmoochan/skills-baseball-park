@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./선수제공파일/bootstrap-5.2.0-dist/css/bootstrap.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -60,30 +61,35 @@
     <h1>GOODS 판매량 확인</h1>
     <div class="goodsSale_menu">
         <div id="goodsGroup"></div>
-        <select name="" id="sort">
-            <option value="">판매량 내림차순</option>
-            <option value="">판매량 오름차순</option>
-            <option value="">가격 내림차순</option>
-            <option value="">가격 오름차순</option>
+        <select id="sort" onchange="goodsListSort()">
+            <option value="saleDesc">판매량 내림차순</option>
+            <option value="saleAsc">판매량 오름차순</option>
+            <option value="priceDesc">가격 내림차순</option>
+            <option value="priceAsc">가격 오름차순</option>
         </select>
 
     </div>
+    <div id="goodsList"></div>
 </div>
 
 
 
 <!-- 푸터 -->
-    <div id="footer">
-        <img src="./img/7247213.png" alt="">
-        <span id="footer_span">Copyrightⓒ Skills baseball park. All rights reserved.</span>
-        <span>  Call: 142-3677 <br>
-            Email: help@skillsbaseballpark.com <br>
-            Address: (12345) 서울특별서 중구 중북로 71</span>
-    </div>
+<div id="footer">
+    <img src="./img/7247213.png" alt="">
+    <span id="footer_span">Copyrightⓒ Skills baseball park. All rights reserved.</span>
+    <span>  Call: 142-3677 <br>
+        Email: help@skillsbaseballpark.com <br>
+        Address: (12345) 서울특별서 중구 중북로 71</span>
+</div>
+
+<script src="./선수제공파일/jquery-3.7.1.min.js"></script>
+<script src="./선수제공파일/bootstrap-5.2.0-dist/js/bootstrap.js"></script>
 <script src="./script.js"></script>
 <script>
     widthChart();
     goodsGroupAdd();
+    goodsListSort();
 </script>
 </body>
 </html>
