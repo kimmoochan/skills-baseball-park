@@ -782,6 +782,26 @@ input[type="radio"]{
 
 
 /* 굿즈 리스트 스타일 */
-#goodsList{
+#bestGoods,#goodsList{
   display: flex;
+  justify-content: center;
+}
+
+
+/* 수정제안 모달 스타일 */
+#goodsEdit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  background-color: #bdbdbd;
+}
+
+#goodsEditImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 90%;
 }
