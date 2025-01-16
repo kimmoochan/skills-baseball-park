@@ -149,7 +149,7 @@ async function goodsEditModalShow(idx){
     const goods = data.data.find((item) => item.idx == idx);
     const goodsEditElem = document.querySelector("#goodsEditImg");
 
-    goodsEditElem.innerHTML = `<h4>이미지를 추가해주세요 :)</h4>`;
+
 
     if(editImgStatus==false){
         goodsEditElem.innerHTML = `<h4>이미지를 추가해주세요 :)</h4>`;
@@ -166,11 +166,37 @@ function addImg(){
 }
 
 function addEditImg(){
-   
+
     const img = document.querySelector("#imgInput").files[0];
     const goodsEditElem = document.querySelector("#goodsEditImg");
     const imgUrl = URL.createObjectURL(img);
     goodsEditElem.innerHTML = "";
     goodsEditElem.style.backgroundImage = `url(${imgUrl})`;
 
+}
+
+function addTextBox(){
+    if(editImgStatus == false){
+        alert("이미지 추가 후 글상자 추가가 가능합니다.");
+    } else{
+        const goodsEditElem = document.querySelector("#goodsEditImg");
+        const textBox = document.createElement("div");
+        textBox.className += "textbox";
+        // textBox.classList.add("textbox");
+        textBox.textContent = "텍스트를 입력해주세요.";
+        textBox.contentEditable = true;
+        goodsEditElem.appendChild(textBox)
+    }
+}
+
+function deleteTextBox(){
+    const editImg = document.querySelector("#goodsEditImg");
+    const textBoxs = Array.from(document.querySelectorAll("#goodsEditImg *"));
+    if(editImgStatus == false){
+        alert("이미지를 추가해주세요!");
+    }else if(textBoxs.length == 0){
+        alert("글상자 요소가 없습니다.")
+    } else {
+        editImg.innerHTML = "";
+    }
 }
