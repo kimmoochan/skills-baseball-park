@@ -797,7 +797,7 @@ input[type="radio"]{
   height: 500px;
   background-color: #bdbdbd;
 }
-
+/* 이미지 추가 스타일 */
 #goodsEditImg{
   display: flex;
   justify-content: center;
@@ -813,6 +813,7 @@ input[type="radio"]{
   display: none;
 }
 
+/* 모달 글상자 스타일일 */
 .textbox{
   position: absolute;
   top: 50px;
