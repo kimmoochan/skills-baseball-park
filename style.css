@@ -804,4 +804,10 @@ input[type="radio"]{
   align-items: center;
   width: 90%;
   height: 90%;
+  background-size: 100% 100%;
+}
+
+
+#imgInput{
+  display: none;
 }
