@@ -79,14 +79,15 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title"></h5>
+            <div id="goodsModalTitle"></div>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div id="goodsEdit" class="modal-body">
             <div id="goodsEditImg"></div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">이미지 추가</button>
+          <button type="button" onclick="addImg()" class="btn btn-primary">이미지 추가</button>
+          <input id="imgInput" onchange="addEditImg()" type="file">
           <button type="button" class="btn btn-warning">글상자 추가</button>
           <button type="button" class="btn btn-dark">삭제</button>
           <button type="button" class="btn btn-danger">다운로드</button>
