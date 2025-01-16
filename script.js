@@ -143,7 +143,7 @@ async function goodsListSort() {
 
 // 수정 제안 모달
 let editImgStatus = false;
-
+// 이미지 추가
 async function goodsEditModalShow(idx){
     const data = await goodsData();
     const goods = data.data.find((item) => item.idx == idx);
@@ -174,7 +174,7 @@ function addEditImg(){
     goodsEditElem.style.backgroundImage = `url(${imgUrl})`;
 
 }
-
+// 글상자 추가 버튼
 function addTextBox(){
     if(editImgStatus == false){
         alert("이미지 추가 후 글상자 추가가 가능합니다.");
@@ -188,7 +188,7 @@ function addTextBox(){
         goodsEditElem.appendChild(textBox)
     }
 }
-
+// 원래대로 버튼
 function deleteTextBox(){
     const editImg = document.querySelector("#goodsEditImg");
     const textBoxs = Array.from(document.querySelectorAll("#goodsEditImg *"));
@@ -199,4 +199,11 @@ function deleteTextBox(){
     } else {
         editImg.innerHTML = "";
     }
+}
+
+function deleteImg(){
+    const editImgElem = document.querySelector("#goodsEditImg");
+    editImgElem.style.backgroundImage = "";
+    editImgElem.innerHTML = "<h4>이미지를 추가해주세요 :)</h4>";
+    editImgStatus = false;
 }
