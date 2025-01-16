@@ -121,7 +121,7 @@ async function goodsListSort() {
                   <p class="card-text">판매량 : ${item.sale}</p>
                   <p class="card-text">가격 : ${item.price}</p>
                   <p class="card-text">분류 : ${item.group}</p>
-                  <button onclick="goodsEditModalShow()" class="btn btn-primary w-75">수정제안</button>
+                  <button onclick="goodsEditModalShow(${item.idx})" class="btn btn-primary w-75">수정제안</button>
                 </div>
               </div>`
         }else {
@@ -134,13 +134,43 @@ async function goodsListSort() {
                   <p class="card-text">판매량 : ${item.sale}</p>
                   <p class="card-text">가격 : ${item.price}</p>
                   <p class="card-text">분류 : ${item.group}</p>
-                  <button onclick="goodsEditModalShow()" class="btn btn-primary w-75">수정제안</button>
+                  <button onclick="goodsEditModalShow(${item.idx})" class="btn btn-primary w-75">수정제안</button>
                 </div>
               </div>`
         }
     })
 }
 
-function goodsEditModalShow(){
+// 수정 제안 모달
+let editImgStatus = false;
+
+async function goodsEditModalShow(idx){
+    const data = await goodsData();
+    const goods = data.data.find((item) => item.idx == idx);
+    const goodsEditElem = document.querySelector("#goodsEditImg");
+
+    goodsEditElem.innerHTML = `<h4>이미지를 추가해주세요 :)</h4>`;
+
+    if(editImgStatus==false){
+        goodsEditElem.innerHTML = `<h4>이미지를 추가해주세요 :)</h4>`;
+    }
+    const modalTitleElem = document.querySelector("#goodsModalTitle");
+    modalTitleElem.innerHTML = `<h5 class="modal-title">${goods.title} 수정제안</h5>`
+
     $("#goodsModal").modal("show");
+}
+
+function addImg(){
+    editImgStatus = true;
+    $("#imgInput").click();
+}
+
+function addEditImg(){
+   
+    const img = document.querySelector("#imgInput").files[0];
+    const goodsEditElem = document.querySelector("#goodsEditImg");
+    const imgUrl = URL.createObjectURL(img);
+    goodsEditElem.innerHTML = "";
+    goodsEditElem.style.backgroundImage = `url(${imgUrl})`;
+
 }
