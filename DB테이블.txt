@@ -1,0 +1,43 @@
+[회원]                   [예약 승인 및 관리]
+아이디:char            승인 아이디:char
+비밀번호:varchar      예약 아이디:char
+이름:varchar           승인 상태:enum 
+회원 등급:enum       승인 일자:varchkar
+-----------------
+[예약]
+예약 아이디:char
+리그:enum
+예약날짜:varchar
+예약시간:varchar
+예약인원:varchar
+가격:varchar
+-----------------
+[휴일]
+휴일 날짜:varchar
+리그:enum
+휴일 시간:varchar
+-----------------
+[상품]
+상품명:varchar
+가격:varchar
+상품설명:text
+상품이미지:blob
+------------------
+[장바구니]
+회원 아이디;char
+상품 아이디:char
+수량:varchar
+------------------
+[구매 리스트]
+회원 아이디;char
+상품 아이디:char
+수량:varchar
+총 가격:varchar
+------------------
+[결제]
+결제 일자:varchar
+결제 금액:varchar
+------------------
+[회원 관심 상품]
+회원 아이디:char
+관심상품 아이디:char
